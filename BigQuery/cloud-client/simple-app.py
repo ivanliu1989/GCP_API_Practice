@@ -12,6 +12,11 @@ def query_shakespeare():
         ORDER BY unique_words DESC
         LIMIT 10""")
 
+    # Make an authenticated API request
+    datasets = list(client.list_datasets())
+    print(datasets)
+
+
     results = query_job.result()  # Waits for job to complete.
 
     for row in results:
